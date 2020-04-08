@@ -24,7 +24,7 @@ Partial Class PinForm
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
+        Me.InputEnter = New System.Windows.Forms.Label()
         Me.Input3 = New System.Windows.Forms.Label()
         Me.Input2 = New System.Windows.Forms.Label()
         Me.Input1 = New System.Windows.Forms.Label()
@@ -34,13 +34,16 @@ Partial Class PinForm
         Me.Input9 = New System.Windows.Forms.Label()
         Me.Input8 = New System.Windows.Forms.Label()
         Me.Input7 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
+        Me.InputClear = New System.Windows.Forms.Label()
         Me.Input0 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Pin1 = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Pin2 = New System.Windows.Forms.Label()
+        Me.Pin4 = New System.Windows.Forms.Label()
+        Me.Pin3 = New System.Windows.Forms.Label()
+        Me.ErrorMessage = New System.Windows.Forms.Label()
+        Me.FileSystemWatcher1 = New System.IO.FileSystemWatcher()
+        CType(Me.FileSystemWatcher1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -64,18 +67,18 @@ Partial Class PinForm
         Me.Label2.Text = "Please Enter Your PIN"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Label12
+        'InputEnter
         '
-        Me.Label12.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(137, Byte), Integer))
-        Me.Label12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label12.Font = New System.Drawing.Font("Fira Code", 8.249999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.SystemColors.Window
-        Me.Label12.Location = New System.Drawing.Point(437, 375)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(50, 35)
-        Me.Label12.TabIndex = 15
-        Me.Label12.Text = "ENTER"
-        Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.InputEnter.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(137, Byte), Integer))
+        Me.InputEnter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.InputEnter.Font = New System.Drawing.Font("Fira Code", 8.249999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.InputEnter.ForeColor = System.Drawing.SystemColors.Window
+        Me.InputEnter.Location = New System.Drawing.Point(437, 375)
+        Me.InputEnter.Name = "InputEnter"
+        Me.InputEnter.Size = New System.Drawing.Size(50, 35)
+        Me.InputEnter.TabIndex = 15
+        Me.InputEnter.Text = "ENTER"
+        Me.InputEnter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Input3
         '
@@ -194,18 +197,18 @@ Partial Class PinForm
         Me.Input7.Text = "7"
         Me.Input7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Label14
+        'InputClear
         '
-        Me.Label14.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(137, Byte), Integer))
-        Me.Label14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label14.Font = New System.Drawing.Font("Fira Code", 8.249999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.ForeColor = System.Drawing.SystemColors.Window
-        Me.Label14.Location = New System.Drawing.Point(325, 375)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(50, 35)
-        Me.Label14.TabIndex = 13
-        Me.Label14.Text = "CLEAR"
-        Me.Label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.InputClear.BackColor = System.Drawing.Color.FromArgb(CType(CType(96, Byte), Integer), CType(CType(200, Byte), Integer), CType(CType(137, Byte), Integer))
+        Me.InputClear.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.InputClear.Font = New System.Drawing.Font("Fira Code", 8.249999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.InputClear.ForeColor = System.Drawing.SystemColors.Window
+        Me.InputClear.Location = New System.Drawing.Point(325, 375)
+        Me.InputClear.Name = "InputClear"
+        Me.InputClear.Size = New System.Drawing.Size(50, 35)
+        Me.InputClear.TabIndex = 13
+        Me.InputClear.Text = "CLEAR"
+        Me.InputClear.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Input0
         '
@@ -242,38 +245,55 @@ Partial Class PinForm
         Me.Pin1.TabIndex = 17
         Me.Pin1.Text = "-"
         '
-        'Label16
+        'Pin2
         '
-        Me.Label16.AutoSize = True
-        Me.Label16.Font = New System.Drawing.Font("Fira Code", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.ForeColor = System.Drawing.SystemColors.Window
-        Me.Label16.Location = New System.Drawing.Point(364, 159)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(37, 40)
-        Me.Label16.TabIndex = 18
-        Me.Label16.Text = "-"
+        Me.Pin2.AutoSize = True
+        Me.Pin2.Font = New System.Drawing.Font("Fira Code", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Pin2.ForeColor = System.Drawing.SystemColors.Window
+        Me.Pin2.Location = New System.Drawing.Point(364, 159)
+        Me.Pin2.Name = "Pin2"
+        Me.Pin2.Size = New System.Drawing.Size(37, 40)
+        Me.Pin2.TabIndex = 18
+        Me.Pin2.Text = "-"
         '
-        'Label17
+        'Pin4
         '
-        Me.Label17.AutoSize = True
-        Me.Label17.Font = New System.Drawing.Font("Fira Code", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.ForeColor = System.Drawing.SystemColors.Window
-        Me.Label17.Location = New System.Drawing.Point(450, 159)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(37, 40)
-        Me.Label17.TabIndex = 20
-        Me.Label17.Text = "-"
+        Me.Pin4.AutoSize = True
+        Me.Pin4.Font = New System.Drawing.Font("Fira Code", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Pin4.ForeColor = System.Drawing.SystemColors.Window
+        Me.Pin4.Location = New System.Drawing.Point(450, 159)
+        Me.Pin4.Name = "Pin4"
+        Me.Pin4.Size = New System.Drawing.Size(37, 40)
+        Me.Pin4.TabIndex = 20
+        Me.Pin4.Text = "-"
         '
-        'Label18
+        'Pin3
         '
-        Me.Label18.AutoSize = True
-        Me.Label18.Font = New System.Drawing.Font("Fira Code", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.ForeColor = System.Drawing.SystemColors.Window
-        Me.Label18.Location = New System.Drawing.Point(407, 159)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(37, 40)
-        Me.Label18.TabIndex = 19
-        Me.Label18.Text = "-"
+        Me.Pin3.AutoSize = True
+        Me.Pin3.Font = New System.Drawing.Font("Fira Code", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Pin3.ForeColor = System.Drawing.SystemColors.Window
+        Me.Pin3.Location = New System.Drawing.Point(407, 159)
+        Me.Pin3.Name = "Pin3"
+        Me.Pin3.Size = New System.Drawing.Size(37, 40)
+        Me.Pin3.TabIndex = 19
+        Me.Pin3.Text = "-"
+        '
+        'ErrorMessage
+        '
+        Me.ErrorMessage.Font = New System.Drawing.Font("Fira Code", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ErrorMessage.ForeColor = System.Drawing.Color.OrangeRed
+        Me.ErrorMessage.Location = New System.Drawing.Point(23, 199)
+        Me.ErrorMessage.Name = "ErrorMessage"
+        Me.ErrorMessage.Size = New System.Drawing.Size(752, 25)
+        Me.ErrorMessage.TabIndex = 21
+        Me.ErrorMessage.Text = "Invalid Pin"
+        Me.ErrorMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.ErrorMessage.Visible = False
+        '
+        'FileSystemWatcher1
+        '
+        Me.FileSystemWatcher1.EnableRaisingEvents = True
+        Me.FileSystemWatcher1.SynchronizingObject = Me
         '
         'PinForm
         '
@@ -282,14 +302,15 @@ Partial Class PinForm
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.ControlBox = False
-        Me.Controls.Add(Me.Label17)
-        Me.Controls.Add(Me.Label18)
-        Me.Controls.Add(Me.Label16)
+        Me.Controls.Add(Me.ErrorMessage)
+        Me.Controls.Add(Me.Pin4)
+        Me.Controls.Add(Me.Pin3)
+        Me.Controls.Add(Me.Pin2)
         Me.Controls.Add(Me.Pin1)
         Me.Controls.Add(Me.Label15)
-        Me.Controls.Add(Me.Label12)
+        Me.Controls.Add(Me.InputEnter)
         Me.Controls.Add(Me.Input0)
-        Me.Controls.Add(Me.Label14)
+        Me.Controls.Add(Me.InputClear)
         Me.Controls.Add(Me.Input9)
         Me.Controls.Add(Me.Input8)
         Me.Controls.Add(Me.Input7)
@@ -304,14 +325,16 @@ Partial Class PinForm
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "PinForm"
         Me.Padding = New System.Windows.Forms.Padding(0, 10, 0, 0)
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Simple ATM"
+        CType(Me.FileSystemWatcher1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents Label12 As Label
+    Friend WithEvents InputEnter As Label
     Friend WithEvents Input3 As Label
     Friend WithEvents Input2 As Label
     Friend WithEvents Input1 As Label
@@ -321,11 +344,13 @@ Partial Class PinForm
     Friend WithEvents Input9 As Label
     Friend WithEvents Input8 As Label
     Friend WithEvents Input7 As Label
-    Friend WithEvents Label14 As Label
+    Friend WithEvents InputClear As Label
     Friend WithEvents Input0 As Label
     Friend WithEvents Label15 As Label
     Friend WithEvents Pin1 As Label
-    Friend WithEvents Label16 As Label
-    Friend WithEvents Label17 As Label
-    Friend WithEvents Label18 As Label
+    Friend WithEvents Pin2 As Label
+    Friend WithEvents Pin4 As Label
+    Friend WithEvents Pin3 As Label
+    Friend WithEvents ErrorMessage As Label
+    Friend WithEvents FileSystemWatcher1 As IO.FileSystemWatcher
 End Class
