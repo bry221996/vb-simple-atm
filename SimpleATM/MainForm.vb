@@ -1,22 +1,26 @@
 ﻿Public Class MainForm
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Me.Hide()
-        PinForm.Show()
-    End Sub
+    Dim Balance As Integer = 0
 
     Private Sub MainForm_VisibleChanged(sender As Object, e As EventArgs) Handles MyBase.VisibleChanged
-        Display(TransactionOptionForm)
+        DisplayPanel(TransactionOptionForm)
     End Sub
 
-    Private Sub Display(ByVal panel As Form)
+    Public Sub DisplayPanel(panel As Form)
         MainPanel.Controls.Clear()
         panel.TopLevel = False
         panel.Show()
         MainPanel.Controls.Add(panel)
     End Sub
 
-    Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Function GetBalance()
+        Return Balance
+    End Function
 
+    Public Sub AddBalance(amount As Integer)
+        Balance = Balance + amount
+    End Sub
+
+    Public Sub SubtractBalance(amount As Integer)
+        Balance = Balance - amount
     End Sub
 End Class

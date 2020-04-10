@@ -97,6 +97,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CheckBalanceForm.Designer.vb">
+      <DependentUpon>CheckBalanceForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CheckBalanceForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DepositForm.Designer.vb">
+      <DependentUpon>DepositForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DepositForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PinForm.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -125,14 +137,32 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="SuccessfulMessage.Designer.vb">
+      <DependentUpon>SuccessfulMessage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SuccessfulMessage.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="TransactionOptionForm.Designer.vb">
       <DependentUpon>TransactionOptionForm.vb</DependentUpon>
     </Compile>
     <Compile Include="TransactionOptionForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="WithdrawForm.Designer.vb">
+      <DependentUpon>WithdrawForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="WithdrawForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CheckBalanceForm.resx">
+      <DependentUpon>CheckBalanceForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DepositForm.resx">
+      <DependentUpon>DepositForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -145,8 +175,14 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="SuccessfulMessage.resx">
+      <DependentUpon>SuccessfulMessage.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TransactionOptionForm.resx">
       <DependentUpon>TransactionOptionForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WithdrawForm.resx">
+      <DependentUpon>WithdrawForm.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

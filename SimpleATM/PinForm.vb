@@ -3,10 +3,6 @@
     Dim pin As String = ""
     Dim attempts As Integer = 0
 
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Console.WriteLine("loaded")
-    End Sub
-
     Private Sub PinForm_MouseDown(sender As Object, e As MouseEventArgs) Handles MyBase.MouseDown
         mouse_move = New Point(-e.X, -e.Y)
     End Sub

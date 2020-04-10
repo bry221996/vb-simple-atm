@@ -27,6 +27,7 @@ Partial Class TransactionOptionForm
         Me.CheckBalanceButton = New System.Windows.Forms.Button()
         Me.WithdrawButton = New System.Windows.Forms.Button()
         Me.DepositButton = New System.Windows.Forms.Button()
+        Me.BackLabel = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label2
@@ -58,7 +59,7 @@ Partial Class TransactionOptionForm
         Me.CheckBalanceButton.FlatAppearance.BorderSize = 0
         Me.CheckBalanceButton.Font = New System.Drawing.Font("Fira Code", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CheckBalanceButton.ForeColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.CheckBalanceButton.Location = New System.Drawing.Point(125, 139)
+        Me.CheckBalanceButton.Location = New System.Drawing.Point(125, 114)
         Me.CheckBalanceButton.Name = "CheckBalanceButton"
         Me.CheckBalanceButton.Size = New System.Drawing.Size(150, 100)
         Me.CheckBalanceButton.TabIndex = 9
@@ -72,7 +73,7 @@ Partial Class TransactionOptionForm
         Me.WithdrawButton.FlatAppearance.BorderSize = 0
         Me.WithdrawButton.Font = New System.Drawing.Font("Fira Code", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.WithdrawButton.ForeColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.WithdrawButton.Location = New System.Drawing.Point(295, 139)
+        Me.WithdrawButton.Location = New System.Drawing.Point(295, 114)
         Me.WithdrawButton.Name = "WithdrawButton"
         Me.WithdrawButton.Size = New System.Drawing.Size(150, 100)
         Me.WithdrawButton.TabIndex = 10
@@ -86,12 +87,23 @@ Partial Class TransactionOptionForm
         Me.DepositButton.FlatAppearance.BorderSize = 0
         Me.DepositButton.Font = New System.Drawing.Font("Fira Code", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DepositButton.ForeColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.DepositButton.Location = New System.Drawing.Point(468, 139)
+        Me.DepositButton.Location = New System.Drawing.Point(468, 114)
         Me.DepositButton.Name = "DepositButton"
         Me.DepositButton.Size = New System.Drawing.Size(150, 100)
         Me.DepositButton.TabIndex = 11
         Me.DepositButton.Text = "Deposit"
         Me.DepositButton.UseVisualStyleBackColor = False
+        '
+        'BackLabel
+        '
+        Me.BackLabel.AutoSize = True
+        Me.BackLabel.Font = New System.Drawing.Font("Fira Code", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BackLabel.ForeColor = System.Drawing.SystemColors.Window
+        Me.BackLabel.Location = New System.Drawing.Point(312, 250)
+        Me.BackLabel.Name = "BackLabel"
+        Me.BackLabel.Size = New System.Drawing.Size(119, 20)
+        Me.BackLabel.TabIndex = 13
+        Me.BackLabel.Text = "Back to PIN"
         '
         'TransactionOptionForm
         '
@@ -100,6 +112,7 @@ Partial Class TransactionOptionForm
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(65, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(750, 300)
         Me.ControlBox = False
+        Me.Controls.Add(Me.BackLabel)
         Me.Controls.Add(Me.DepositButton)
         Me.Controls.Add(Me.WithdrawButton)
         Me.Controls.Add(Me.CheckBalanceButton)
@@ -109,6 +122,7 @@ Partial Class TransactionOptionForm
         Me.Name = "TransactionOptionForm"
         Me.Text = "TransactionOptionForm"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -117,4 +131,5 @@ Partial Class TransactionOptionForm
     Friend WithEvents CheckBalanceButton As Button
     Friend WithEvents WithdrawButton As Button
     Friend WithEvents DepositButton As Button
+    Friend WithEvents BackLabel As Label
 End Class

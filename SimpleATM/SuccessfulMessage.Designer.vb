@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class MainForm
+Partial Class SuccessfulMessage
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,43 +22,48 @@ Partial Class MainForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.MainPanel = New System.Windows.Forms.Panel()
         Me.SuspendLayout()
+        '
+        'Label2
+        '
+        Me.Label2.Font = New System.Drawing.Font("Fira Code", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.SystemColors.Window
+        Me.Label2.Location = New System.Drawing.Point(0, 78)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(750, 46)
+        Me.Label2.TabIndex = 4
+        Me.Label2.Text = "Transaction Successful"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label1
         '
-        Me.Label1.Font = New System.Drawing.Font("Fira Code", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Fira Code", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.Window
-        Me.Label1.Location = New System.Drawing.Point(12, 12)
+        Me.Label1.Location = New System.Drawing.Point(293, 250)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(191, 32)
-        Me.Label1.TabIndex = 3
-        Me.Label1.Text = "SIMPLE ATM"
+        Me.Label1.Size = New System.Drawing.Size(179, 20)
+        Me.Label1.TabIndex = 5
+        Me.Label1.Text = "Back to main menu"
         '
-        'MainPanel
-        '
-        Me.MainPanel.Location = New System.Drawing.Point(18, 78)
-        Me.MainPanel.Name = "MainPanel"
-        Me.MainPanel.Size = New System.Drawing.Size(750, 300)
-        Me.MainPanel.TabIndex = 4
-        '
-        'MainForm
+        'SuccessfulMessage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(53, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(65, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(784, 411)
-        Me.ControlBox = False
-        Me.Controls.Add(Me.MainPanel)
+        Me.ClientSize = New System.Drawing.Size(750, 300)
         Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.Label2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "MainForm"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "MainForm"
+        Me.Name = "SuccessfulMessage"
+        Me.Text = "SuccessfulMessage"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
+
+    Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents MainPanel As Panel
 End Class
